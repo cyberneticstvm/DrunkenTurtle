@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drunken-turtle-studio.vijoysasidharan.chatgpt.site/sitemap.xml
