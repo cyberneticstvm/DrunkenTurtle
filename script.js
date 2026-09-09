@@ -46,12 +46,51 @@
   document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
   const track = document.querySelector('.work-track');
+  const slides = [...track.querySelectorAll('.work-card')];
+  const workCurrent = document.getElementById('work-current');
+  let currentSlide = 0;
+  let scrollFrame;
+
+  const updateCarouselStatus = () => {
+    workCurrent.textContent = String(currentSlide + 1);
+    slides.forEach((slide, index) => {
+      slide.setAttribute('aria-label', `Project ${index + 1} of ${slides.length}`);
+    });
+  };
+
+  const goToSlide = (index) => {
+    currentSlide = (index + slides.length) % slides.length;
+    const firstLeft = slides[0].offsetLeft;
+    track.scrollTo({ left: slides[currentSlide].offsetLeft - firstLeft, behavior: 'smooth' });
+    updateCarouselStatus();
+  };
+
   document.querySelectorAll('[data-direction]').forEach((button) => {
     button.addEventListener('click', () => {
-      const distance = Math.min(track.clientWidth * .82, 520);
-      track.scrollBy({ left: button.dataset.direction === 'next' ? distance : -distance, behavior: 'smooth' });
+      goToSlide(currentSlide + (button.dataset.direction === 'next' ? 1 : -1));
     });
   });
+
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(scrollFrame);
+    scrollFrame = requestAnimationFrame(() => {
+      const firstLeft = slides[0].offsetLeft;
+      currentSlide = slides.reduce((closest, slide, index) => {
+        const distance = Math.abs((slide.offsetLeft - firstLeft) - track.scrollLeft);
+        const closestDistance = Math.abs((slides[closest].offsetLeft - firstLeft) - track.scrollLeft);
+        return distance < closestDistance ? index : closest;
+      }, 0);
+      updateCarouselStatus();
+    });
+  }, { passive: true });
+
+  track.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    goToSlide(currentSlide + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+
+  updateCarouselStatus();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
