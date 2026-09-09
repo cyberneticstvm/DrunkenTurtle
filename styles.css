@@ -8,6 +8,7 @@
   --line: rgba(255, 255, 255, .16);
   --max: 1760px;
   --header-h: 92px;
+  --service-ribbon-h: 112px;
   --display: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif;
   --sans: Inter, Arial, Helvetica, sans-serif;
 }
@@ -49,7 +50,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 .button:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(255, 101, 0, .27); }
 .button-small { min-height: 42px; padding: .65rem 1.4rem; font-size: .78rem; }
 
-.hero { position: relative; min-height: min(790px, 88vh); overflow: hidden; display: grid; align-items: start; }
+.hero { position: relative; min-height: calc(100vh - var(--service-ribbon-h)); min-height: calc(100svh - var(--service-ribbon-h)); overflow: hidden; display: grid; align-items: start; }
 .hero-media, .hero-media img, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-media img { object-fit: cover; object-position: center; }
 .hero-shade { background: linear-gradient(90deg, rgba(5,5,5,.93) 0%, rgba(5,5,5,.77) 26%, rgba(5,5,5,.08) 57%, rgba(5,5,5,.1) 100%), linear-gradient(0deg, rgba(5,5,5,.28), transparent 30%); }
@@ -66,7 +67,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 .scroll-cue span { width: 16px; height: 28px; border: 1px solid #fff; border-radius: 9px; }
 
 .service-ribbon { position: relative; z-index: 4; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(13,13,13,.97); }
-.ribbon-grid { display: grid; grid-template-columns: 1.1fr repeat(4, 1fr); min-height: 112px; align-items: center; }
+.ribbon-grid { display: grid; grid-template-columns: 1.1fr repeat(4, 1fr); min-height: var(--service-ribbon-h); align-items: center; }
 .ribbon-grid h2 { margin: 0; padding-right: 3rem; font-family: var(--display); font-size: 1.1rem; letter-spacing: .08em; border-bottom: 2px solid var(--orange); line-height: 2.5; }
 .ribbon-grid a { display: grid; grid-template-columns: 44px 1fr; grid-template-rows: auto auto; padding: 0 2.4rem; border-left: 1px solid var(--line); }
 .ribbon-grid strong { align-self: end; font-family: var(--display); font-size: .9rem; text-transform: uppercase; }
