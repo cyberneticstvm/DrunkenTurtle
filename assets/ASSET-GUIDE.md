@@ -2,6 +2,8 @@
 
 The website is already wired to these filenames. Replace a file with another file of the same name and format; no HTML, CSS, or JavaScript changes are required.
 
+The current responsive `logo.webp` files are optimized from `WEBSITE PNG FALLBACK AROUND. 300 X 150 PX_.svg`, which is the logo used at the top-left of the page.
+
 ## Desktop (1101px and wider)
 
 - Folder: `assets/desktop/`
