@@ -1,2 +1,6 @@
 *.tar.gz
 assets/*-preview.png
+
+# Keep source artwork local; publish optimized web assets from build/assets instead.
+assets/*.svg
+assets/svgs/*.svg

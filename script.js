@@ -3,7 +3,16 @@
 
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.primary-nav');
+  const menuBackdrop = document.querySelector('.menu-backdrop');
   const navLinks = [...document.querySelectorAll('.primary-nav a')];
+  const siteHeader = document.querySelector('.site-header');
+
+  const updateStickyHeader = () => {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  updateStickyHeader();
+  window.addEventListener('scroll', updateStickyHeader, { passive: true });
 
   const closeMenu = () => {
     navigation.classList.remove('open');
@@ -21,6 +30,7 @@
   });
 
   navLinks.forEach((link) => link.addEventListener('click', closeMenu));
+  menuBackdrop.addEventListener('click', closeMenu);
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeMenu();
   });
