@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "DT Anton";
+  src: url("assets/fonts/anton-latin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --ink: #0b0b0b;
   --paper: #f4f3ef;
@@ -9,7 +17,7 @@
   --max: 1760px;
   --header-h: 92px;
   --service-ribbon-h: 112px;
-  --display: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif;
+  --display: "DT Anton", Impact, Haettenschweiler, "Arial Black", "Arial Narrow Bold", "Arial Narrow", "sans-serif-condensed", sans-serif;
   --sans: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -57,7 +65,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 .hero-media img { object-fit: cover; object-position: center; }
 .hero-shade { background: linear-gradient(90deg, rgba(5,5,5,.93) 0%, rgba(5,5,5,.77) 26%, rgba(5,5,5,.08) 57%, rgba(5,5,5,.1) 100%), linear-gradient(0deg, rgba(5,5,5,.28), transparent 30%); }
 .hero-content { position: relative; z-index: 2; padding-top: clamp(8.6rem, 10.2vw, 11rem); }
-.hero h1 { max-width: 680px; margin: 0 0 1.25rem; font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif; font-size: clamp(3.2rem, 3.75vw, 4.1rem); font-weight: 400; letter-spacing: .005em; line-height: .97; text-shadow: 0 3px 18px rgba(0,0,0,.4); }
+.hero h1 { max-width: 680px; margin: 0 0 1.25rem; font-family: var(--display); font-size: clamp(3.2rem, 3.75vw, 4.1rem); font-weight: 400; letter-spacing: .005em; line-height: .97; text-shadow: 0 3px 18px rgba(0,0,0,.4); }
 .hero h1 span { position: relative; white-space: nowrap; }
 .hero h1 span::after { content: ""; position: absolute; left: 2%; right: 0; bottom: -.08em; height: .08em; background: var(--orange); border-radius: 60% 45% 50% 35%; transform: rotate(.7deg); }
 .hero-intro { max-width: 530px; margin-bottom: 2rem; color: #ececec; font-size: clamp(1rem, 1.3vw, 1.3rem); }
@@ -220,7 +228,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
   .hero-media img { object-position: 59% center; }
   .hero-shade { background: linear-gradient(180deg, rgba(5,5,5,.96) 0, rgba(5,5,5,.72) 39%, rgba(5,5,5,.1) 70%, rgba(5,5,5,.52) 100%); }
   .hero-content { padding-top: 9rem; }
-  .hero h1 { max-width: 100%; font-size: clamp(3.55rem, 16vw, 5.5rem); }
+  .hero h1 { max-width: 100%; font-size: clamp(3.35rem, 15vw, 4.35rem); line-height: .92; }
   .hero h1 span { white-space: normal; }
   .hero-intro { max-width: 330px; }
   .hero-actions { gap: 1rem; }
@@ -262,7 +270,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
   .contact { padding: 3rem 0; }
   h2 { font-size: 3.15rem; }
   .hero { min-height: 790px; }
-  .hero h1 { font-size: 3.65rem; }
+  .hero h1 { font-size: clamp(3.3rem, 15vw, 3.8rem); }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .primary-nav { width: 100%; padding-inline: 1rem; box-shadow: none; }
   .scroll-cue { display: none; }
