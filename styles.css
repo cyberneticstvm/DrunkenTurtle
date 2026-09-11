@@ -42,7 +42,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 .site-header { position: fixed; z-index: 20; top: 0; left: 0; display: grid; grid-template-columns: 150px 1fr auto; align-items: center; width: 100%; height: var(--header-h); padding: 0 4vw; border-bottom: 1px solid rgba(255,255,255,.06); background: rgba(8,8,8,.84); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: background .25s ease, box-shadow .25s ease; }
 .site-header.is-scrolled { background: rgba(8,8,8,.96); box-shadow: 0 10px 30px rgba(0,0,0,.22); }
 .brand { width: 128px; height: 64px; display: grid; place-items: center; overflow: visible; }
-.brand .site-logo-image { width: 128px; max-width: none; height: auto; object-fit: contain; }
+.brand .site-logo-image { width: auto; max-width: 100%; height: 82px; object-fit: contain; }
 .primary-nav { display: flex; justify-content: center; gap: clamp(1.25rem, 2.8vw, 3.5rem); }
 .primary-nav a { position: relative; padding: 2rem 0; font-family: var(--display); font-size: .88rem; letter-spacing: .04em; text-transform: uppercase; }
 .primary-nav a::after { content: ""; position: absolute; left: 0; bottom: 1.65rem; width: 100%; height: 2px; background: var(--orange); transform: scaleX(0); transition: transform .25s ease; }
@@ -171,8 +171,8 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 .site-footer { position: relative; overflow: hidden; padding: clamp(3rem, 4.5vw, 4.5rem) 0 1.5rem; border-top: 3px solid var(--orange); background: radial-gradient(circle at 12% 0, rgba(255,101,0,.13), transparent 30%), #090909; }
 .footer-main { display: grid; grid-template-columns: minmax(280px, 1.45fr) repeat(3, minmax(135px, .62fr)); gap: clamp(2rem, 4vw, 5rem); }
 .footer-intro { max-width: 430px; }
-.footer-logo { display: grid; place-items: center; width: 148px; height: 74px; margin-bottom: 1.2rem; overflow: visible; }
-.footer-logo .site-logo-image { width: 148px; max-width: none; height: auto; object-fit: contain; }
+.footer-logo { display: grid; place-items: center; width: 148px; height: 112px; margin-bottom: 1.2rem; overflow: visible; }
+.footer-logo .site-logo-image { width: auto; max-width: 100%; height: 112px; object-fit: contain; }
 .footer-intro p { max-width: 390px; margin-bottom: 1.35rem; color: #aaa; line-height: 1.6; }
 .footer-cta { display: inline-flex; align-items: center; gap: .75rem; padding-bottom: .25rem; border-bottom: 1px solid var(--orange); font-family: var(--display); font-size: 1rem; letter-spacing: .04em; text-transform: uppercase; }
 .footer-cta span { color: var(--orange); }
@@ -214,7 +214,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
   .container { width: min(calc(100% - 2rem), var(--max)); }
   .site-header { position: fixed; grid-template-columns: 1fr auto; padding: 0 1rem; }
   .brand { position: relative; z-index: 3; width: 112px; height: 58px; }
-  .brand .site-logo-image { width: 112px; height: auto; }
+  .brand .site-logo-image { width: auto; height: 68px; }
   .menu-toggle { display: block; position: relative; z-index: 3; width: 44px; height: 44px; padding: .35rem; border-radius: 50%; background: rgba(255,255,255,.06); }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
