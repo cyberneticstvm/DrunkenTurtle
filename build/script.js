@@ -102,5 +102,10 @@
 
   updateCarouselStatus();
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if (year) {
+    const currentYear = String(new Date().getFullYear());
+    year.textContent = currentYear;
+    year.setAttribute('datetime', currentYear);
+  }
 })();
