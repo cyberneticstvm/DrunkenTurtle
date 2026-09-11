@@ -170,10 +170,10 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
 
 .site-footer { position: relative; overflow: hidden; padding: clamp(3rem, 4.5vw, 4.5rem) 0 1.5rem; border-top: 3px solid var(--orange); background: radial-gradient(circle at 12% 0, rgba(255,101,0,.13), transparent 30%), #090909; }
 .footer-main { display: grid; grid-template-columns: minmax(280px, 1.45fr) repeat(3, minmax(135px, .62fr)); gap: clamp(2rem, 4vw, 5rem); }
-.footer-intro { max-width: 430px; }
-.footer-logo { display: grid; place-items: center; width: 148px; height: 112px; margin-bottom: 1.2rem; overflow: visible; }
-.footer-logo .site-logo-image { width: auto; max-width: 100%; height: 112px; object-fit: contain; }
-.footer-intro p { max-width: 390px; margin-bottom: 1.35rem; color: #aaa; line-height: 1.6; }
+.footer-intro { display: flex; max-width: 430px; flex-direction: column; align-items: flex-start; }
+.footer-logo { display: block; width: 128px; aspect-ratio: 600 / 609; flex: 0 0 auto; margin: 0 0 1.35rem; overflow: hidden; }
+.footer-logo .site-logo-image { display: block; width: 100%; max-width: none; height: 100%; object-fit: contain; }
+.footer-intro p { position: relative; clear: both; max-width: 390px; margin: 0 0 1.35rem; color: #aaa; line-height: 1.6; }
 .footer-cta { display: inline-flex; align-items: center; gap: .75rem; padding-bottom: .25rem; border-bottom: 1px solid var(--orange); font-family: var(--display); font-size: 1rem; letter-spacing: .04em; text-transform: uppercase; }
 .footer-cta span { color: var(--orange); }
 .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: .55rem; }
@@ -293,6 +293,7 @@ h2 { margin-bottom: 1.5rem; font-size: clamp(3rem, 5.5vw, 6.6rem); }
   .whatsapp-copy, .whatsapp-arrow { display: none; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
   .footer-intro, .footer-connect { grid-column: 1 / -1; }
+  .footer-logo { width: 112px; margin-bottom: 1.15rem; }
   .footer-bottom { grid-template-columns: 1fr; gap: .6rem; }
   .footer-bottom > a { justify-self: start; margin-right: 0; }
 }
